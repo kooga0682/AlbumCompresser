@@ -8,6 +8,16 @@ This compress audio file to flac format.
 
 ## Installation
 
+### Mac
+```
+brew install ffmpeg
+cp aifcomp /usr/local/bin
+```
 
 ## Usage
 
+### example
+```
+cd ~/Music/Album
+aifcomp
+```
