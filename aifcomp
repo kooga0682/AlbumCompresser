@@ -19,8 +19,10 @@ do
     
     echo "Compressing $BASENAME ......   $UNCOMPRESSED_AUDIO -> $COMPRESSED_AUDIO"
     
-    # ffmpeg -y -i "$UNCOMPRESSED_AUDIO" "$COMPRESSED_AUDIO"
+    ffmpeg -y -i "$UNCOMPRESSED_AUDIO" "$COMPRESSED_AUDIO"
     rm "$BASENAME.aif"
-    echo "Done\n\n"
-    ls
+    
 done
+
+echo -e "Done\n\n"
+ls
