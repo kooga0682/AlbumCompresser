@@ -11,16 +11,23 @@ It is just a wrapper of FFmpeg.
 ### Mac
 ```
 brew install ffmpeg
-cp aifcomp /usr/local/bin
+cp aifcomp.sh /usr/local/bin/aifcomp
+cp rewriteextention.sh /usr/local/bin/rewriteextention
 ```
 
 ## Usage
 
+### To compress aif to flac
 ```
 cd PATH_OF_ALBUM
 aifcomp
 ```
 
+### To rewrite audio file extention from mp4 to m4a
+```
+cd PATH_OF_ALBUM
+rewriteextention
+```
 
 ### example
 ```
