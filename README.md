@@ -31,6 +31,40 @@ rewriteextention
 
 ### example
 ```
-cd ~/Music/Album
+cd ~/Music/Library/Artist/Album
 aifcomp
+```
+
+
+## Expected directory structure
+
+### Before process
+```
+~/Music
+└── Library
+    ├── Artist A
+    │   └── Album A
+    │       ├── 01 music.aif
+    │       └── 02 music.aif
+    └── Artist B
+        ├── Album B
+        │   └── 01 music.mp4
+        └── Album C
+            ├── 01 music.mp4
+            └── 02 music.mp4
+```
+### After process
+```
+~/Music
+└── Library
+    ├── Artist A
+    │   └── Album A
+    │       ├── 01 music.flac
+    │       └── 02 music.flac
+    └── Artist B
+        ├── Album B
+        │   └── 01 music.m4a
+        └── Album C
+            ├── 01 music.m4a
+            └── 02 music.m4a
 ```

@@ -4,6 +4,10 @@
 
 #### This script is written for MacOSX 
 
+# I want to assign the current directory name to the ALBUM_NAME variable.
+# But I can not use basename command because of spaces are exsisting in the name.
+ALBUM_NAME=`pwd`  #${`pwd`%/*}
+
 for MP4_FILE in *.mp4
 do
     BASENAME=${MP4_FILE%.mp4}
@@ -15,5 +19,4 @@ do
 
 done
 
-echo -e "Done\n\n"
-ls
+echo -e "All Processes of the "$ALBUM_NAME" have been done.\n"
