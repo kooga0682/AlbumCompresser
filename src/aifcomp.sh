@@ -1,8 +1,12 @@
 #!/bin/bash
 
 ### Compress Audio from AIFF to FLAC ###
-
-#### This script is written for MacOSX 
+#
+# This script compress all uncompressed audio file (such as .aif/.wav) in the album to FLAC format.
+# The uncompressed audio in the directory will be removed after the end of processes.
+# It is just a wrapper of FFmpeg.
+#
+#### This script is written for MacOSX ####
 
 
 

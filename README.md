@@ -1,36 +1,49 @@
-# Album Compresser
+# Audio Library Organizer
 
 ## Discription
 
-This script compress all uncompressed audio file (such as .aif/.wav) in the album to FLAC format. The uncompressed audio in the directory will be removed after the end of processes.
-It is just a wrapper of FFmpeg.
+This software will organize your Audio Library.
+Following processes will apply to all files in the library directory.
 
+- Uncompressed file (now only .aif) will compress to FLAC.
+- .mp4 containerized audio file will rename to .m4a
+
+## Requirement
+
+- ffmppeg
 
 ## Installation
 
-### Mac
-```
+### Preinstallation
+```sh
+
 brew install ffmpeg
-cp aifcomp.sh /usr/local/bin/aifcomp
-cp rewriteextention.sh /usr/local/bin/rewriteextention
+```
+
+### Mac
+```sh
+brew install ffmpeg
+git clone https://github.com/kooga0682/AudioLibraryOrganizer.git
+cp AudioLibraryOrganizer/aifcomp.sh /usr/local/bin/aifcomp
+cp AudioLibraryOrganizer/rewriteextention.sh /usr/local/bin/rewriteextention
 ```
 
 ## Usage
 
 ### To compress aif to flac
-```
+```sh
 cd PATH_OF_ALBUM
 aifcomp
 ```
 
 ### To rewrite audio file extention from mp4 to m4a
-```
+```sh
 cd PATH_OF_ALBUM
 rewriteextention
 ```
 
 ### example
-```
+```sh
 cd ~/Music/Library/Artist/Album
 aifcomp
 ```
