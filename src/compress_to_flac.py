@@ -12,16 +12,16 @@ import subprocess
 import os
 import sys
 
-def aiff_to_flac(basename):
+def compress_to_flac(basename,extention):
     if os.path.isfile(basename+".flac"):
-        print("Warning: "+basename+".flac alrady exists! Nothing to do for "+basename+".aif",file=sys.stderr)
+        print("Warning: "+basename+".flac alrady exists! Nothing to do for "+basename+extention,file=sys.stderr)
     else:
-        subprocess.run("ffmpeg -i "+basename+".aif "+basename+".flac", shell=True)
+        subprocess.run("ffmpeg -i "+basename + extention + ' ' + basename + ".flac", shell=True)
     return
 
 if __name__ == "__main__":
     # subprocess.run("echo subprocess test", shell=True)
-    aiff_to_flac("test")
+    compress_to_flac("test")
 
 '''
 for UNCOMPRESSED_AUDIO in *.aif
