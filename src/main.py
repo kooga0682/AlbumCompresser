@@ -23,8 +23,8 @@ def by_album(album):
     tracks = [x for x in album.iterdir() if x.is_file()]
     for track in tracks:
         # print(track)
-        track_handler.sort(track)
-        track_handler.change_file_mode(track)
+        processed_track = track_handler.sort(track)
+        track_handler.change_file_mode(processed_track)
     
     album.chmod(0o755)
     return
@@ -41,8 +41,8 @@ def by_artist(artist):
 
 def main():
     ### Set the audio library directory ########################################
-    # audio_library_relative_path = "~/Music/Library"
-    audio_library_relative_path = "./test"
+    audio_library_relative_path = "~/Music/Library"
+    # audio_library_relative_path = "./test"
     p = PosixPath(audio_library_relative_path)
     expanded_path = p.expanduser()
     audio_library_absolute_path = expanded_path.absolute()

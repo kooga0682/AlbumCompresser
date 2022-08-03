@@ -8,10 +8,13 @@ def sort(track_path):
     # print(extention)
 
     if extention==".aif" or extention==".wav":
-        compress_to_flac(track_path)
+        processed_track_path = compress_to_flac(track_path)
     elif extention == ".mp4":
-        convert_to_m4a(track_path)
-    return
+        processed_track_path = convert_to_m4a(track_path)
+    else:
+        processed_track_path = track_path
+
+    return processed_track_path
 
 def change_file_mode(track_path):
     track_path.chmod(0o644)
@@ -26,7 +29,7 @@ def compress_to_flac(track_path):
     ffmpeg.run(stream, overwrite_output=True)
     move_to_trashbox(track_path)
     # subprocess.run("ffmpeg -i "+track_path + ' ' + basename + ".flac", shell=True)
-    return
+    return compressed_audio_path
 
 
 def convert_to_m4a(track_path):
@@ -36,7 +39,7 @@ def convert_to_m4a(track_path):
     # print(audio_filename)
     # print(type(audio_filename))
     os.rename(track_path, audio_file_path)
-    return
+    return audio_file_path
 
 
 def move_to_trashbox(track):
