@@ -12,6 +12,8 @@ import subprocess
 import os
 import sys
 
+
+
 def compress_to_flac(basename,extention):
     if os.path.isfile(basename+".flac"):
         print("Warning: "+basename+".flac alrady exists! Nothing to do for "+basename+extention,file=sys.stderr)

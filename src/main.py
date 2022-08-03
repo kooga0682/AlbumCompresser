@@ -1,15 +1,20 @@
 #! python3
 
+################################################################################
+#
 ### This software organizes audio files to load in DAP  ###
 ### This software is written for Mac/Linux
+#
+################################################################################
 
 import os
-from pathlib import Path
+# from pathlib import Path
 from pathlib import PosixPath
 # import by_artist
-# import compress_to_flac
+import compress_to_flac
 # import rewrite_extention
 # import change_file_mode
+import track_handler
 
 # files = os.listdir(".")
 
@@ -17,7 +22,8 @@ def by_album(album):
     # print(album)
     tracks = [x for x in album.iterdir() if x.is_file()]
     for track in tracks:
-        print(track)
+        # print(track)
+        track_handler.sort(track)
     return
 
 
@@ -29,9 +35,8 @@ def by_artist(artist):
         by_album(album)
     return
 
-
 def main():
-    # Set the audio library directory
+    ### Set the audio library directory ########################################
     # audio_library_relative_path = "~/Music/Library"
     audio_library_relative_path = "./test"
     p = PosixPath(audio_library_relative_path)
