@@ -15,8 +15,6 @@ def main():
         change_file_mode.change_mode(file)
         process_for(file)
 
-
-
 def process_for(file):
     separated_file_name = os.path.splitext(file)
     basename            = separated_file_name[0]
@@ -32,3 +30,5 @@ def process_for(file):
 
 if __name__ == "__main__":
     main()
+
+main()
