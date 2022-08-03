@@ -1,5 +1,3 @@
-
-import subprocess
 import ffmpeg
 import os
 import shutil
@@ -15,14 +13,17 @@ def sort(track_path):
         convert_to_m4a(track_path)
     return
 
+def change_file_mode(track_path):
+    track_path.chmod(0o644)
+    return
 
 def compress_to_flac(track_path):
     compressed_audio_path = track_path.with_suffix(".flac")
-    print("compress ",track_path," to ",compressed_audio_path)
+    # print("compress ",track_path," to ",compressed_audio_path)
 
     stream = ffmpeg.input(str(track_path))
     stream = ffmpeg.output(stream, str(compressed_audio_path))
-    # ffmpeg.run(stream, overwrite_output=True)
+    ffmpeg.run(stream, overwrite_output=True)
     move_to_trashbox(track_path)
     # subprocess.run("ffmpeg -i "+track_path + ' ' + basename + ".flac", shell=True)
     return
@@ -43,8 +44,6 @@ def move_to_trashbox(track):
     create_trashbox(trashbox_path)
 
     moved = shutil.move(track, trashbox_path)
-
-    # print()
 
     return
 

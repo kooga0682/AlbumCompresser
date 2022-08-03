@@ -24,6 +24,9 @@ def by_album(album):
     for track in tracks:
         # print(track)
         track_handler.sort(track)
+        track_handler.change_file_mode(track)
+    
+    album.chmod(0o755)
     return
 
 
@@ -33,6 +36,7 @@ def by_artist(artist):
     for album in albums:
         # print(album)
         by_album(album)
+    artist.chmod(0o755)
     return
 
 def main():
