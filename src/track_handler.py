@@ -46,7 +46,8 @@ def move_to_trashbox(track):
     trashbox_path = track.parent.parent.parent.joinpath(".trashbox")
     create_trashbox(trashbox_path)
 
-    moved = shutil.move(track, trashbox_path)
+    moved = shutil.move(str(track), str(trashbox_path))
+    # Path.unlink(missing_ok=False)
 
     return
 
